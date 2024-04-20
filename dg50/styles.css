@@ -1,0 +1,135 @@
+/* Base settings for the whole page */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents scrollbars from appearing */
+    background-color: #f0f0f0; /* Light grey background */
+}
+
+/* Main game container styling */
+#gameContainer {
+    width: 360px; /* Half of 720px */
+    height: 640px; /* Half of 1280px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Styles for all game images */
+.standImage, #pushUpImage, #pushFailImage {
+    width: 100%; /* Ensures image takes full width of its container */
+    height: auto; /* Keeps aspect ratio intact */
+    display: none; /* Start hidden, display as needed */
+    object-fit: contain; /* Ensures the image is scaled properly within the element bounds */
+}
+
+/* Fixed font sizes for all text elements */
+#clickToStart, #clickToTryAgain, #score, #timer, #motivationalMessage, #topRecord, #restart, #maxReps, #gameHeader {
+    /* Use fixed font-sizes in pixels that don't scale with viewport changes */
+    font-size: 18px; /* Adjust as needed to match your desired size at 50% zoom */
+    /* Rest of your properties remain unchanged */
+    color: white;
+    text-align: center;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Positioning and styling the start and retry prompts */
+#clickToStart, #clickToTryAgain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+/* Styling for the game score */
+#score {
+    position: absolute;
+    top: 275px; /* Adjust as needed for fixed positioning */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px; /* Adjust this value to increase or decrease the score's font size */
+    display: none; /* Shown during gameplay */
+    font-family: 'Arial Black', Arial, sans-serif;
+}
+
+/* Timer display styling */
+#timer {
+    position: absolute;
+    top: 600px; /* Positioned right under the score */
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Hidden initially */
+}
+
+/* Motivational message styling */
+#motivationalMessage {
+    position: absolute;
+    top: 340px; /* Placed a bit lower to avoid overlap */
+    font-size: 12px; /* Smaller font size */
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Hidden initially */
+}
+
+/* Styling for record display, restart button, and max reps */
+#topRecord, #restart, #maxReps {
+    position: absolute;
+    bottom: 5px; /* Bottom spacing */
+    font-size: 9px; /* Smaller font size */
+    color: black;
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+#topRecord {
+    left: 10px;
+}
+
+#restart {
+    right: 10px;
+}
+
+#maxReps {
+    left: 50%;
+    transform: translateX(-50%);
+    display: block; /* Ensures visibility */
+}
+
+/* Styling for the game header */
+#gameHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the container */
+    height: 20px; /* Adjusted height */
+    background-color: #100C08; /* Smokey black (dark gray) */
+    color: white;
+    font-size: 9px; /* Adjusted font size */
+    text-align: center;
+    line-height: 25px; /* Adjusted line height for vertical centering */
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+#headerLink {
+    color: white; /* Ensures the link is white */
+    text-decoration: none; /* Removes underline from links */
+    display: inline-block; /* Allows width and height to be set */
+    width: 100%; /* Ensures the link fills the entire header */
+    height: 100%; /* Ensures the link fills the entire header */
+    line-height: 13px; /* Adjusted to move text up slightly */
+    vertical-align: middle; /* Ensures text aligns vertically in the middle */
+}
+
+#headerLink:hover {
+    color: red; /* Changes text color to red on hover */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate clickability */
+}
+
+/* Remove any media queries to ensure fixed sizing */
